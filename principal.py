@@ -32,9 +32,11 @@ print(df_ratings.groupby(["rating"])["userId"].count())
 plt.hist(df_ratings.groupby(["repoId"])["repoId"].count(),bins=8)
 plt.show()
 
-#nariz de usuario/ratings
+
+
+#Matriz
 df_matrix = pd.pivot_table(df_ratings, values='rating', index='userId', columns='repoId').fillna(0)
-print(df_matrix)
+df_matrix
 
 #sparcity
 ratings = df_matrix.values
@@ -43,36 +45,25 @@ sparsity /= (ratings.shape[0] * ratings.shape[1])
 sparsity *= 100
 print('Sparsity: {:4.2f}%'.format(sparsity))
 
-#train y test
-ratings_train, ratings_test = train_test_split(ratings, test_size = 0.2,random_state=42)
+#Train y test set
+ratings_train, ratings_test = train_test_split(ratings, test_size = 0.2, random_state=42)
+print(ratings_train.shape)
+print(ratings_test.shape)
 
-#similitud entre usuarios
+#Calcular matriz
 sim_matrix = 1 - sklearn.metrics.pairwise.cosine_distances(ratings)
 print(sim_matrix.shape)
-
-# sim_matrix
 plt.imshow(sim_matrix);
 plt.colorbar()
 plt.show()
 
+#recomendaciones
 #separar las filas y columnas de train y test
 sim_matrix_train = sim_matrix[0:24,0:24]
 sim_matrix_test = sim_matrix[24:30,24:30]
 
-
-users_predictions = sim_matrix_train.dot(ratings_train) / np.array([np.abs(sim_matrix_train).sum(axis=1)])
-
+users_predictions = sim_matrix_train.dot(ratings_train) / np.array([np.abs(sim_matrix_train).sum(axis=1)]).T
 plt.rcParams['figure.figsize'] = (20.0, 5.0)
 plt.imshow(users_predictions);
 plt.colorbar()
 plt.show()
-
-USUARIO_EJEMPLO = 'jbagnato' # debe existir en nuestro dataset de train!
-data = df_users[df_users['username'] == USUARIO_EJEMPLO]
-usuario_ver = data.iloc[0]['userId'] -1 # resta 1 para obtener el index de pandas
-user0=users_predictions.argsort()[usuario_ver]
-
-# Veamos los tres recomendados con mayor puntaje en la predic para este usuario
-for i, aRepo in enumerate(user0[-3:]):
-    selRepo = df_repos[df_repos['repoId']==(aRepo+1)]
-    print(selRepo['title'] , 'puntaje:', users_predictions[usuario_ver][aRepo]) 
