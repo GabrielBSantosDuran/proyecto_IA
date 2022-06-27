@@ -1,3 +1,4 @@
+from re import L
 import pandas as pd
 import numpy as np
 from regex import F
@@ -51,10 +52,8 @@ print('Sparsity: {:4.2f}%'.format(sparsity))
 ratings_train, ratings_test = train_test_split(ratings, test_size = 0.2, random_state=42)
 print(ratings_train.shape)
 print(ratings_test.shape)
-
 #Calcular matriz
 sim_matrix = 1 - sklearn.metrics.pairwise.cosine_distances(ratings)
 print(sim_matrix.shape) 
 plt.imshow(sim_matrix);
 plt.colorbar()
-plt.show()

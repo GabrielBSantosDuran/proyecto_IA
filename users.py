@@ -18,6 +18,19 @@ with open('users.csv', 'w') as csvfile:
     write.writerow({'userId': '4',
                    'username': 'N64RX',
                    'name': 'Ramiro Gonzales'})
-    
-    
+    write.writerow({'userId': '5',
+                   'username': 'Prueba',
+                   'name': 'Ramiro Teran'})
+    write.writerow({'userId': '6',
+                   'username': 'alfonzo',
+                   'name': 'Alfonzo Gonzales'})
+    write.writerow({'userId': '7',
+                   'username': 'LA',
+                   'name': 'Larry'})
+    write.writerow({'userId': '8',
+                   'username': 'Bigboss',
+                   'name': 'Solid Snake'})
+    write.writerow({'userId': '9',
+                   'username': 'andres',
+                   'name': 'Andres Gonzales'})    
     
