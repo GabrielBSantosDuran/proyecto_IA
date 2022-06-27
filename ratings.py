@@ -27,7 +27,42 @@ with open('ratings.csv', 'w') as csvfile:
     write.writerow({'userId':'4',
                     'repoId':'3',
                     'rating':'2'})
-    
+    write.writerow({'userId':'4',
+                    'repoId':'2',
+                    'rating':'1'})
+    write.writerow({'userId':'2',
+                    'repoId':'3',
+                    'rating':'4'})
+    write.writerow({'userId':'1',
+                    'repoId':'3',
+                    'rating':'4'})
+    write.writerow({'userId':'4',
+                    'repoId':'2',
+                    'rating':'1'})
+    write.writerow({'userId':'1',
+                    'repoId':'2',
+                    'rating':'4'})
+    write.writerow({'userId':'1',
+                    'repoId':'2',
+                    'rating':'3'})
+    write.writerow({'userId':'1',
+                    'repoId':'2',
+                    'rating':'3'})    
+    write.writerow({'userId':'6',
+                    'repoId':'2',
+                    'rating':'3'})
+    write.writerow({'userId':'7',
+                    'repoId':'2',
+                    'rating':'3'})
+    write.writerow({'userId':'5',
+                    'repoId':'2',
+                    'rating':'3'})
+    write.writerow({'userId':'7',
+                    'repoId':'2',
+                    'rating':'3'})
+    write.writerow({'userId':'6',
+                    'repoId':'2',
+                    'rating':'3'})                    
     
     
        

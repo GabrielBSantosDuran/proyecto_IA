@@ -1,6 +1,12 @@
-repoId,title,categorias,stars
-1,Avenger Age of Ultron,Accion,8000
-2,Hotel Transilvania,Animada,8050
-3,Star Wars Rogue One,Ciencia Ficcion,7500
-4,Saw,Terror,9000
-5,Spiderman no Way Home,Accion,11000
+repoId,title,categorias,stars
+
+1,Avenger Age of Ultron,Accion,8000
+
+2,Hotel Transilvania,Animada,8050
+
+3,Star Wars Rogue One,Ciencia Ficcion,7500
+
+4,Saw,Terror,9000
+
+5,Spiderman no Way Home,Accion,11000
+
