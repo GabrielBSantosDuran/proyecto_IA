@@ -1,3 +1,4 @@
+"""
 #Recomendacion por Correlacion
 average_rating = pd.DataFrame(df_ratings.groupby('repoId')['rating'].mean())
 average_rating['ratingCount'] = pd.DataFrame(df_ratings.groupby('repoId')['rating'].count())
@@ -31,3 +32,4 @@ plt.xticks(y_pos,objects,rotation='vertical')
 plt.ylabel('Conteo de estrellas')
 plt.title('Repo mas popular')
 plt.show()
+"""
